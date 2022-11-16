@@ -13,6 +13,10 @@ public class App
         String hello="Hello welcome to Spring learning course";
         
         System.out.println( hello);
+        
+        String learnByExample= "Learn by example";
+        
+        System.out.println( learnByExample);
     }
     
 }
