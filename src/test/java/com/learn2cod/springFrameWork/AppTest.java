@@ -1,5 +1,10 @@
 package com.learn2cod.springFrameWork;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.learn2cod.first.spring.coding.SpringClassExample1;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -34,5 +39,15 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+    }
+    
+    public void springTest1() {
+    	  ApplicationContext appCtx = new ClassPathXmlApplicationContext("applicationContext.xml");
+          
+//        BeanFactory beanFactory = new XmlBeanFactory(resource);
+        
+        SpringClassExample1 course = (SpringClassExample1) appCtx.getBean("courseName");  
+        
+        course.display();
     }
 }
