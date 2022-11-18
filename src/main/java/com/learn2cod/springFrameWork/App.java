@@ -1,22 +1,31 @@
 package com.learn2cod.springFrameWork;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.learn2cod.first.spring.coding.SpringClassExample1;  
+
 /**
  * Hello world!
  *
  */
 public class App 
 {
-    public static void main( String[] args )
+    @SuppressWarnings("resource")
+	public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
         
-        String hello="Hello welcome to Spring learning course";
+//        Resource resource = new ClassPathResource("applicationContext.xml");
         
-        System.out.println( hello);
+        ApplicationContext appCtx = new ClassPathXmlApplicationContext("applicationContext.xml");
         
-        String learnByExample= "Learn by example";
+//        BeanFactory beanFactory = new XmlBeanFactory(resource);
         
-        System.out.println( learnByExample);
-    }
+        SpringClassExample1 course = (SpringClassExample1) appCtx.getBean("courseName");  
+        
+        course.display();
+        
+     }
     
 }
