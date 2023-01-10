@@ -1,5 +1,7 @@
 package com.learn2cod.springFrameWork;
 
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -45,6 +47,8 @@ public class AppTest
     	  ApplicationContext appCtx = new ClassPathXmlApplicationContext("applicationContext.xml");
           
 //        BeanFactory beanFactory = new XmlBeanFactory(resource);
+    	  
+//    	  SpringClassExample1 course= SpringClassExample1.getSpringClassExample1();
         
         SpringClassExample1 course = (SpringClassExample1) appCtx.getBean("courseName");  
         
